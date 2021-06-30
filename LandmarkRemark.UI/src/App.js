@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Toast from "./components/Toast";
-import getLocation from "./utilities/geolocation"
+import getLocation from "./utilities/geoLocation"
 import { getInfoWindow as initialiseSingleInfoWindow } from "./maps/InfoWindow"
 import { addCurrentLocationMarker, addMarker, removeMarker } from "./maps/Marker"
 import { getAllNotesApi, addNoteApi, searchNoteApi, deleteNoteApi } from "./utilities/noteApi";
@@ -19,7 +19,7 @@ function App() {
 
   const [notes, setNotes] = useState([]);
   const [isChangeUser, setIsChangeUser] = useState(true);
-  const [inputUsername, setInputUsername] = useState();
+  const [inputUsername, setInputUsername] = useState("");
   const [username, setUsername] = useState();
   const [applicationError, setApplicationError] = useState(null);
 
@@ -100,6 +100,10 @@ function App() {
   const enterSearchTerm = debounce((e) => search(e.target.value));
 
   const login = () => {
+    if(inputUsername.length === 0) {
+      showToast("Username is required", "danger");
+      return;
+    }
     setUsername(inputUsername);
     setInputUsername("");
     triggerChangeUser();

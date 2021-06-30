@@ -1,4 +1,4 @@
-import httpClient from "./axios-instance"
+import httpClient from "./axiosInstance"
 
 export function getAllNotesApi() {
     return httpClient.get("note");
