@@ -10,15 +10,19 @@
 ## Tested in
 Tested in Windows having .NET 5.0.301 SDK, PostgreSQL 13.3, pgAdmin 4, Node 14.15.5, NPM 6.14.11
 
-## Demo video
-TODO Dropbox link
+## Videos
+How to run  
+https://www.dropbox.com/s/oqu2mxsvyxf81km/Landmark%20Remark%20how%20to%20run.wmv?dl=0
+
+Demo  
+https://www.dropbox.com/s/4fg6yxwofuafqgu/Landmark%20Remark%20demo.wmv?dl=0
 
 ## To run
 1. In pgAdmin, create database LandmarkRemark with username=postgres, password=123456  
 If username and/or password are different, update in LandmarkRemark.API/appsettings.json
 2. In LandmarkRemark.API, open command line/powershell/terminal
     ``` 
-    dotnet tool install --global dotnet ef
+    dotnet tool install --global dotnet-ef
     dotnet ef database update
     dotnet run
     ```
@@ -27,7 +31,7 @@ If username and/or password are different, update in LandmarkRemark.API/appsetti
 3. In LandmarkRemark.UI, open command line/powershell/terminal  
     ```
     npm i  
-    npm run
+    npm start
     ```
     To view UI, go to http://localhost:3000  
     If Block was clicked when application prompted for location, to re-trigger it, try using browser's private mode or for Chrome, go to Settings -> Site Settings -> Permissions -> Location -> remove http://localhost:3000/ from block
@@ -100,7 +104,8 @@ If the API call fails, an error message is shown
 2. Deploy online to test in mobile
 3. Ask for feedback from experienced React developers
 4. Fix this known issue:  
-When create note and delete it, it is deleted from database successfully but the marker remains. Upon refresh the page, the marker is not shown.
+When delete note, it is deleted from database successfully but the marker remains. Upon refresh the page, the marker is not shown.
+5. At the moment, any user can delete any note. I'd ask product owner (PO) whether only users who created the note can
 
 ### Time spent
 1. Understand requirements, draft layout, brainstorm features and behaviours - 1 hour
