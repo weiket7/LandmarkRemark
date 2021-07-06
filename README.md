@@ -115,3 +115,11 @@ When delete note, it is deleted from database successfully but the marker remain
 4. Testing, bug fixing and enhancements - 2 hours 
 5. Write README - 1 hour  
 Total: 17
+
+![Home](/screenshots/home.png?raw=true "Home")
+
+![Marker and note](/screenshots/marker-and-remark.png?raw=true "Marker and note")
+
+![Search](/screenshots/search.png?raw=true "Search")
+
+![Add Note](/screenshots/add-note.png?raw=true "Add Note")
